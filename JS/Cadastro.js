@@ -1,4 +1,4 @@
-//inport {createEvent} form "./crud.js";
+// //inport {createEvent} form "./crud.js";
 
 // const form = document.querySelector("form");
 

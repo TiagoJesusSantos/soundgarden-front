@@ -1,38 +1,11 @@
-/* <!DOCTYPE html>
-<script>
-"use strict";
+var myImage = document.querySelector('#imagem-principal');
 
-(async () => {
-let user = {
-  name: 'John',
-  surname: 'Smith'
-};
-
-let response = await fetch('/article/fetch/post/user', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json;charset=utf-8'
-  },
-  body: JSON.stringify(user)
+fetch('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/pY3BnhPQYpTxasKfx.jpeg')
+.then(function(response) {
+  return response.blob();
+})
+.then(function(myBlob) {
+  var objectURL = URL.createObjectURL(myBlob);
+  myImage.src = objectURL;
+  console.log(objectURL)
 });
-
-let result = await response.json();
-alert(result.message);
-})()
-</script>
-
-*/
-exportasync function listEvents(){
-try{
-    const url = http://127.0.0.1:5500/index.html
-const response =await fetch(url);
-const data = await response.json();
-console.log(error);
-
-
-} catch(error) {
-    console
-}
-
-
-}
