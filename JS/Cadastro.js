@@ -1,38 +1,42 @@
-// //inport {createEvent} form "./crud.js";
+//inport {createEvent} form "./crud.js";
+const createEvent = (data) => {
+  return fetch('https://soundgarden-api.vercel.app//events',{
+    method: "POST", 
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data)
+  })
+}
 
-// const form = document.querySelector("form");
+const form = document.querySelector("form");
 
-// form.addEventListener("submit",async (e) => {
-// e.preventDefault();
+form.addEventListener("submit",async (e) => {
+  e.preventDefault();
 
+  const attractionsValues = form.atracoes.value.split(',');
 
-// const eventToCreate = {
+  const eventToCreate = {
+    name: form.nome.value,
+    poster:"url-img",
+    attractions: attractionsValues,
+    description: form.descricao.value,
+    scheduled: form.data.value,
+    number_tickets: form.lotacao.value,
+  };
 
-//     name: form.nome.value,
-//     poster:"",
-//     attractions: form.atracoes.value,
-//     description: form.descricao.value,
-//     scheduled: form.data.value,
-//     number_tickets: form.lotacao.value,
-
-// };
-
-// const response = await createEvent ( eventToCreate);
-
-// if (response.status == 201){
-//     //levar o ussuario para outra pagina.
-// }
-// });
-
-
-var myImage = document.querySelector('#imagem-principal');
-
-fetch('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/pY3BnhPQYpTxasKfx.jpeg')
-.then(function(response) {
-  return response.blob();
-})
-.then(function(myBlob) {
-  var objectURL = URL.createObjectURL(myBlob);
-  myImage.src = objectURL;
-  console.log(objectURL)
+  try {
+    const response = await createEvent(eventToCreate);
+  
+    if (response.status == 201){
+      alert("Evento criado com sucesso")
+      setTimeout(function() {
+        window.location.replace("admin.html");
+      }, 2000);
+    }    
+  } catch (error) {
+    alert("error: "+ error.data +"\nErro ao criar evento. Tente Novamente")
+   
+  }
 });
+
