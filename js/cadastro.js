@@ -21,7 +21,7 @@ form.addEventListener("submit",async (e) => {
     poster:"url-img",
     attractions: attractionsValues,
     description: form.descricao.value,
-    scheduled: form.data.value,
+    scheduled: `${form.data.value}:00.000Z`,
     number_tickets: form.lotacao.value,
   };
 
