@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -96,12 +96,13 @@
     const createEvent = (data) => {
   return fetch('https://soundgarden-api.vercel.app//events',{
     method: "POST", 
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "https://tiagojesussantos.github.io/soundgarden-front/cadastro-evento.html",
-      "Access-Control-Allow-Credentials": "true",
-    },"Access-Control-Allow-Headers": "*",
-    body: JSON.stringify(data)
+    // headers: {
+    //   "Content-Type": "application/json",
+    // //   "Access-Control-Allow-Origin": "https://tiagojesussantos.github.io/soundgarden-front/cadastro-evento.html",
+    // //   "Access-Control-Allow-Credentials": "true",
+    // // "Access-Control-Allow-Headers": "*",
+    // },
+       body: JSON.stringify(data)
   })
 }
 
