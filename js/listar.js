@@ -1,4 +1,4 @@
-const eventList = () => { 
+const eventList = async () => { 
     return fetch('https://soundgarden-api.vercel.app//events').then(
         (response) => {
             if (response.ok) { 
@@ -9,3 +9,4 @@ const eventList = () => {
         }
     )
 }
+eventList();
