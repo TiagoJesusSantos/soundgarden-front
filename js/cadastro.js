@@ -2,7 +2,6 @@
 const createEvent = (data) => {
   return fetch('https://soundgarden-api.vercel.app//events',{
     method: "POST",
-    mode: "no-cors",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
