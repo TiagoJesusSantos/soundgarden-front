@@ -25,6 +25,7 @@ form.addEventListener("submit",async (e) => {
     number_tickets: form.lotacao.value,
   };
 
+ 
   try {
     const response = await createEvent(eventToCreate);
   
