@@ -48,3 +48,132 @@ footer nav ul{
 footer nav ul li  {
     padding: 10px;
 }
+
+/* Estilos do modal */
+.modal {
+    display: none; /* Inicialmente, o modal fica oculto */
+    position: fixed; /* Permite que o modal fique sobreposto à página */
+    z-index: 1; /* Garante que o modal fique acima dos outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Adiciona uma barra de rolagem caso o conteúdo seja maior que a tela */
+    background-color: rgba(0,0,0,0.4); /* Adiciona um fundo escuro semi-transparente */
+  }
+  
+.btn-modal {
+  background-color: #C2185B;
+  border-color: #C2185B;
+}
+
+/* Estilos do conteúdo do modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Estilos do botão de fechar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* slider show img */
+.slideshow-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 1vh;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 150px;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100vh;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input[type=button] {
+    background-color: #c2185b;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0px;
+    margin: 4px 8px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.custom-shape-divider-bottom-1679082804 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+  
+.custom-shape-divider-bottom-1679082804 svg {
+    position: relative;
+    display: block;
+    width: calc(142% + 1.3px);
+    height: 163px;
+    transform: rotateY(180deg);
+}
+  
+.custom-shape-divider-bottom-1679082804 .shape-fill {
+    fill: #C2185B;
+}

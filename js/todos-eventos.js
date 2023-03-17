@@ -21,7 +21,7 @@ const allEvents = async () => {
                 <h2>${element.name} - ${new Date(element.scheduled).toLocaleDateString('pt-BR', options)}</h2>
                 <h4>${element.attractions.join(", ")}</h4>
                 <p>${element.description}</p>
-                <a href="#" class="btn btn-primary">reservar ingresso</a>
+                <a href="?id=${element._id}" class="btn btn-primary">reservar ingresso</a>
             </article>`     
             
         }).join('')

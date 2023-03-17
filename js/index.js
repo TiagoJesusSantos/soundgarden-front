@@ -7,7 +7,6 @@ fetch('https://www.istockphoto.com/br/foto/aplaudindo-multid%C3%A3o-de-pessoas-n
 .then(function(myBlob) {
   var objectURL = URL.createObjectURL(myBlob);
   myImage.src = objectURL;
-  console.log(objectURL)
 });
 
 const lastThreeEvents = async () => {
@@ -35,7 +34,7 @@ const lastThreeEvents = async () => {
               <h2>${element.name} - ${new Date(element.scheduled).toLocaleDateString('pt-BR', options)}</h2>
               <h4>${element.attractions.join(", ")}</h4>
               <p>${element.description}</p>
-              <a href="#" class="btn btn-primary">reservar ingresso</a>
+              <a href="?id=${element._id}" class="btn btn-primary btn-modal modal-btn">reservar ingresso</a>
           </article>`     
           
       }).join('')

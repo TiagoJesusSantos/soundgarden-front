@@ -18,6 +18,7 @@ const eventReservations = async () => {
                 return `<article class="evento card p-5 m-3" style="min-height: 185px;justify-content: space-between">
                     <h2>${element.owner_name}</h2>
                     <h4>${element.owner_email}</h4>
+                    <h5>Ingressos: ${element.number_tickets}</h5>
                 </article>`     
                 
             }).join('')

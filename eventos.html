@@ -104,6 +104,23 @@
         </section>
 
     </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Faça sua reserva</h2>
+        <p>Insira seus dados aqui:</p>
+        <form class="ticket-form col-6">
+            <input type="text" class="form-control" id="nome" aria-describedby="nome" placeholder="Nome">
+            <br>
+            <input type="email" class="form-control"  id="email" aria-describedby="email" placeholder="E-mail">
+            <br>
+            <button type="submit" id="btn-sucess" class="btn btn-primary">Enviar</button>
+        </form>
+        </div>
+    </div>
+
     <footer>
         <div class="container d-flex justify-content-center align-items-center">
             <a href="#">
@@ -122,6 +139,7 @@
         </div>
     </footer>
     <script type="module" src="./js/todos-eventos.js" ></script>
+    <script type="module" src="./js/modal.js" ></script>
 </body>
 
 </html>
