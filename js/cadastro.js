@@ -28,13 +28,10 @@ form.addEventListener("submit",async (e) => {
 
  
   try {
-    const response = await createEvent(eventToCreate);
-  
-    console.log(response)
+    await createEvent(eventToCreate);
+
     alert("Evento criado com sucesso")
-    setTimeout(function() {
-      window.location.replace("admin.html");
-    }, 500);
+    window.location.replace("admin.html");
    
   } catch (error) {
     alert("error: "+ error.data +"\nErro ao criar evento. Tente Novamente")

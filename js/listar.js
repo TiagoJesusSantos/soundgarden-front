@@ -32,8 +32,8 @@ const eventList = async () => {
             <td>${element.name}</td>
             <td>${element.attractions.join(", ")}</td>
             <td>
-                <a href="reservas.html" class="btn btn-dark">ver reservas</a>
-                <a href="editar-evento.html" class="btn btn-secondary">editar</a>
+                <a href="reservas-evento.html?id=${element._id}" class="btn btn-dark">ver reservas</a>
+                <a href="editar-evento.html?id=${element._id}" class="btn btn-secondary">editar</a>
                 <a href="excluir-evento.html?id=${element._id}" class="btn btn-danger">excluir</a>
             </td>
             </tr>`        

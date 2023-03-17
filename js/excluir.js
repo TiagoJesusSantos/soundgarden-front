@@ -1,12 +1,12 @@
-import { eventListById}  from "./listar-id.js";
+import { eventLoad } from './carregar-evento.js'
 
 const params = new URL(document.location).searchParams;
 const idEvent = params.get("id");
 
-const eventLoad = async () => {
+const screenDataLoad = async () => {
 
-    const data =   await eventListById(idEvent)
-     console.log(data)
+    const data = await eventLoad(idEvent)
+    
     document.getElementById("nome").value = data.name;
     document.getElementById("banner").value = data.poster;
     document.getElementById("atracoes").value = data.attractions;
@@ -14,27 +14,31 @@ const eventLoad = async () => {
     document.getElementById("data").value = data.scheduled;
     document.getElementById("lotacao").value = data.number_tickets;
 }
-eventLoad()
+screenDataLoad()
 
-export const removeEvent = async (data) => { 
-    const form = document.querySelector("form");
-        
-    form.addEventListener("submit",async (e) => {
-        e.preventDefault();
-
-      return fetch(`https://soundgarden-api.vercel.app/events/${idEvent}`, {
-            method: 'DELETE',  
-            headers: {
-                "Content-Type": "application/json;charset=utf-8",
-              },         
-        }).then((resposta) => {
-            console.log(resposta)
-            if (!resposta.noContent) {
-                throw new Error('Não foi possível deletar o evento');
-            } 
-            alert(" evento excluido ")
-
-            window.location.replace('admin.html')
-        });
-    })
+const removeEvent = async () => {
+    fetch(`https://soundgarden-api.vercel.app/events/${idEvent}`, {
+        method: 'DELETE',  
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+        },         
+    }).then((resposta) => resposta);
+    
 };
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit",async (e) => {
+    e.preventDefault();
+
+    try {
+        await removeEvent();
+
+        alert("Evento excluido")
+        window.location.replace("admin.html");
+       
+    } catch (error) {
+        alert("error: "+ error.data +"\nNão foi possível deletar o evento")
+    
+    }
+});

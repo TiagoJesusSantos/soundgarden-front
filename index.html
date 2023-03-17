@@ -26,8 +26,8 @@
             <div class="container text-center">
                 <h2>Próximos eventos</h2>
             </div>
-            <div class="container d-flex justify-content-center align-items-center">
-                <article class="evento card p-5 m-3">
+            <div class="container d-flex justify-content-center align-items-center" data-last-events-table>
+                <!-- <article class="evento card p-5 m-3">
                     <h2>nome do evento - 05/03/2022</h2>
                     <h4>Arctic Monkeys, The Kooks, Hiatus Kaiyote</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
@@ -50,7 +50,8 @@
                         dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
                         nobis in inventore tenetur asperiores.</p>
                     <a href="#" class="btn btn-primary">reservar ingresso</a>
-                </article>
+                </article> -->
+
             </div>
             <div class="container text-center">
                 <a href="eventos.html" class="btn btn-secondary">ver todos os eventos</a>
@@ -108,8 +109,6 @@
     <script type="text/javascript">
         var myImage = document.querySelector('#imagem-principal');
         
-      
-
         fetch('https://img.freepik.com/fotos-gratis/publico-animado-assistindo-fogos-de-artificio-de-confete-e-se-divertindo-no-festival-de-musica-a-noite-copiar-espaco_637285-559.jpg',{
             method: "GET", 
             headers: {
@@ -127,6 +126,7 @@
         });
         
      </script>
+    <script type="module" src="./js/index.js" ></script>
 </body>
 
 </html>
