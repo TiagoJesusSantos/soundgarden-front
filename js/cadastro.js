@@ -1,12 +1,13 @@
-//inport {createEvent} form "./crud.js";
-const createEvent = (data) => {
-  return fetch('https://soundgarden-api.vercel.app//events',{
+const createEvent = async (data) => {
+  return fetch('https://soundgarden-api.vercel.app/events',{
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
     body: JSON.stringify(data)
-  })
+  }).then((response) => {
+    return response.body;
+});
 }
 
 const form = document.querySelector("form");
@@ -29,12 +30,12 @@ form.addEventListener("submit",async (e) => {
   try {
     const response = await createEvent(eventToCreate);
   
-    if (response.status == 201){
-      alert("Evento criado com sucesso")
-      setTimeout(function() {
-        window.location.replace("admin.html");
-      }, 2000);
-    }    
+    console.log(response)
+    alert("Evento criado com sucesso")
+    setTimeout(function() {
+      window.location.replace("admin.html");
+    }, 500);
+   
   } catch (error) {
     alert("error: "+ error.data +"\nErro ao criar evento. Tente Novamente")
    
