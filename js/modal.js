@@ -60,13 +60,14 @@ const form = document.querySelector("form.ticket-form");
 form.addEventListener("submit", async (e)=>{
     e.preventDefault();
 
-    await reservarTicket(form)
-    if (e.target === document.getElementById('btn-sucess')) {
-        alert('Reserva cadastrada! Voltar para pagina de eventos')
-        window.location.replace("eventos.html");
-    } else if (e.target === document.getElementById('btn-danger')) {
-        alert('Nenhuma reserva cadastrada! Voltar para pagina de eventos')
-        window.location.href = "eventos.html";
+    try {
+        await reservarTicket(form)
+    
+        alert("Reserva criada com sucesso")
+        window.location.replace(document.location.pathname);
+       
+    } catch (error) {
+        alert("error: "+ error.data +"\nErro ao criar reserva. Tente Novamente")
     }
 })
 
